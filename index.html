@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VA Services Scope Guide</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --font_default: "Figtree", sans-serif;
+            --font_cmula_default: "Nunito", sans-serif;
+            --color_text_default: rgba(14, 30, 47, 1);
+            --color_text_default_rgb: 14, 30, 47;
+            --color_alert_default: rgba(252, 172, 18, 1);
+            --color_alert_default_rgb: 252, 172, 18;
+            --color_primary_default: rgba(105, 156, 172, 1);
+            --color_primary_default_rgb: 105, 156, 172;
+            --color_success_default: rgba(64, 147, 72, 1);
+            --color_success_default_rgb: 64, 147, 72;
+            --color_surface_default: rgba(255, 255, 255, 1);
+            --color_surface_default_rgb: 255, 255, 255;
+            --color_background_default: rgba(235, 238, 241, 1);
+            --color_background_default_rgb: 235, 238, 241;
+            --color_destructive_default: rgba(248, 62, 62, 1);
+            --color_destructive_default_rgb: 248, 62, 62;
+            --color_primary_contrast_default: rgba(255, 255, 255, 1);
+            --color_primary_contrast_default_rgb: 255, 255, 255;
+            --color_cmcmt_default: rgba(2, 132, 254, 1);
+            --color_cmcmt_default_rgb: 2, 132, 254;
+            --color_cmcmu_default: rgba(0, 0, 0, 1);
+            --color_cmcmu_default_rgb: 0, 0, 0;
+            --color_cmcmv_default: rgba(2, 132, 254, 1);
+            --color_cmcmv_default_rgb: 2, 132, 254;
+            --color_cmjzM_default: rgba(74, 67, 96, 1);
+            --color_cmjzM_default_rgb: 74, 67, 96;
+            --color_cmulY_default: rgba(115, 109, 133, 1);
+            --color_cmulY_default_rgb: 115, 109, 133;
+            --color_cmulZ_default: rgba(74, 67, 96, 1);
+            --color_cmulZ_default_rgb: 74, 67, 96;
+            --color_cmulk_default: rgba(63, 117, 133, 1);
+            --color_cmulk_default_rgb: 63, 117, 133;
+            --color_cmyyG_default: rgba(235, 238, 241, 1);
+            --color_cmyyG_default_rgb: 235, 238, 241;
+            --color_cnJxq_default: rgba(115, 109, 133, 1);
+            --color_cnJxq_default_rgb: 115, 109, 133;
+            --color_cnNrQ_default: rgba(210, 142, 130, 1);
+            --color_cnNrQ_default_rgb: 210, 142, 130;
+            --color_cnZGe_default: rgba(124, 119, 141, 1);
+            --color_cnZGe_default_rgb: 124, 119, 141;
+        }
+
+        body {
+            font-family: var(--font_default);
+            color: var(--color_text_default);
+            background-color: var(--color_background_default);
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <main class="max-w-7xl mx-auto px-6 py-8">
+        <!-- Simple Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold mb-2" style="color: var(--color_text_default); font-family: var(--font_default);">Virtual Assistant Services</h1>
+            <p class="text-base mb-4" style="color: var(--color_cmulY_default); font-family: var(--font_default);">Scope of Service Guide for Practitioners & Administration</p>
+        </div>
+
+        <!-- Simple Search Section -->
+        <div class="mb-8">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <div class="relative mb-4">
+                    <input
+                        type="text"
+                        id="search"
+                        placeholder="Search services..."
+                        style="border-color: var(--color_cmyyG_default); font-family: var(--font_default); color: var(--color_text_default);"
+                        class="w-full px-4 py-3 pl-11 border rounded-lg focus:outline-none focus:border-[var(--color_primary_default)] transition text-base"
+                    />
+                    <svg class="w-5 h-5 absolute left-3.5 top-1/2 transform -translate-y-1/2" style="color: var(--color_cmulY_default);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </div>
+
+                <div class="flex gap-2 flex-wrap">
+                    <button style="background-color: var(--color_primary_default); font-family: var(--font_default);" class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition text-white" data-frequency="all">
+                        All
+                    </button>
+                    <button style="background-color: white; border: 1px solid var(--color_cmyyG_default); color: var(--color_text_default); font-family: var(--font_default);" class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition hover:border-[var(--color_primary_default)]" data-frequency="Daily">
+                        Daily
+                    </button>
+                    <button style="background-color: white; border: 1px solid var(--color_cmyyG_default); color: var(--color_text_default); font-family: var(--font_default);" class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition hover:border-[var(--color_primary_default)]" data-frequency="Weekly">
+                        Weekly
+                    </button>
+                    <button style="background-color: white; border: 1px solid var(--color_cmyyG_default); color: var(--color_text_default); font-family: var(--font_default);" class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition hover:border-[var(--color_primary_default)]" data-frequency="Monthly">
+                        Monthly
+                    </button>
+                    <button style="background-color: white; border: 1px solid var(--color_cmyyG_default); color: var(--color_text_default); font-family: var(--font_default);" class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition hover:border-[var(--color_primary_default)]" data-frequency="Quarterly">
+                        Quarterly
+                    </button>
+                    <button style="background-color: white; border: 1px solid var(--color_cmyyG_default); color: var(--color_text_default); font-family: var(--font_default);" class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition hover:border-[var(--color_primary_default)]" data-frequency="Adhoc">
+                        Ad-hoc
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Core Services -->
+        <section class="mb-10">
+            <div class="mb-6" id="core-header">
+                <h2 class="text-2xl font-bold mb-1" style="color: var(--color_text_default); font-family: var(--font_default);">Core Services</h2>
+                <p class="text-sm" style="color: var(--color_cmulY_default); font-family: var(--font_default);">Our primary service delivery</p>
+            </div>
+
+            <div id="core-services-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Core services will be rendered here by JavaScript -->
+            </div>
+            <div id="core-services-empty" class="hidden text-center py-12 text-sm" style="color: var(--color_cmulY_default);">
+                No core services match your search criteria.
+            </div>
+        </section>
+
+        <!-- ADHOC Tasks -->
+        <section class="mb-10">
+            <div class="mb-6" id="adhoc-header">
+                <h2 class="text-2xl font-bold mb-1" style="color: var(--color_text_default); font-family: var(--font_default);">Ad-hoc Support</h2>
+                <p class="text-sm" style="color: var(--color_cmulY_default); font-family: var(--font_default);">Tasks that can be supported once core tasks are completed</p>
+            </div>
+
+            <div id="adhoc-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Ad-hoc tasks will be rendered here by JavaScript -->
+            </div>
+            <div id="adhoc-empty" class="hidden text-center py-12 text-sm" style="color: var(--color_cmulY_default);">
+                No ad-hoc tasks match your search criteria.
+            </div>
+        </section>
+
+        <!-- How Else We Can Help (Marketplace) -->
+        <section class="mb-10">
+            <div class="mb-6">
+                <div class="flex items-start justify-between gap-4">
+                    <div>
+                        <h2 class="text-2xl font-bold mb-1" style="color: var(--color_text_default); font-family: var(--font_default);">How Else We Can Help</h2>
+                        <p class="text-sm" style="color: var(--color_cmulY_default); font-family: var(--font_default);">Yoonet maintains a team of technical and creative talents ready to support your business needs.</p>
+                    </div>
+                    <button id="request-support-btn" style="background-color: var(--color_primary_default); font-family: var(--font_default);" class="text-white hover:opacity-90 px-5 py-2.5 rounded-lg font-medium transition shadow-sm text-sm whitespace-nowrap">
+                        Request Support
+                    </button>
+                </div>
+            </div>
+
+            <!-- Marketplace Services Grid -->
+            <div id="marketplace-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Marketplace services will be rendered here by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Request Support -->
+    <div id="support-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-xl shadow-xl max-w-md w-full p-8 relative">
+            <button id="close-modal" class="absolute top-4 right-4 hover:opacity-70" style="color: var(--color_cmulY_default);">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <h3 class="text-2xl font-bold mb-3" style="color: var(--color_text_default); font-family: var(--font_default);">Request Support</h3>
+            <p class="mb-6 text-sm" style="color: var(--color_cmulY_default); font-family: var(--font_default);">
+                Please contact our Yoonet Marketplace team to discuss your project needs and get a customized quote.
+            </p>
+            <div class="space-y-3">
+                <a href="mailto:marketplace@yoonet.com.au" style="background-color: var(--color_primary_default); font-family: var(--font_default);" class="block w-full hover:opacity-90 text-white text-center px-6 py-3 rounded-lg font-medium transition">
+                    Email Marketplace Team
+                </a>
+                <button id="close-modal-btn" style="background-color: var(--color_cmyyG_default); color: var(--color_text_default); font-family: var(--font_default);" class="block w-full hover:opacity-90 text-center px-6 py-3 rounded-lg font-medium transition">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Embedded JSON data
+        const tasksData = {"tasks":[{"Parent Category":"RED","Secondary Area":"Billing, Rebates & Reconciliation","Title":"Cashbook","Description":"Enter each practitioner\u2019s product-sales revenue into the Cashbook sheet","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Weekly","Comments / Recommendations":"","Alliedflow":0.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Compliance & Records","Title":"Scans Files Management","Description":"Rename incoming scans, forward them to the appropriate practitioner, and upload them to Cliniko for accurate patient record keeping.","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Daily","Comments / Recommendations":"","Alliedflow":1.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Compliance & Records","Title":"Checking of Communication in Cliniko","Description":"This process ensures all patient communications including emails, messages, recalls, and notes  are reviewed, accurate, and up to date within Cliniko.","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Daily","Comments / Recommendations":"","Alliedflow":0.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Compliance & Records","Title":"Checking of New Patients ","Description":"Checking of patients when 3 days before appointment and send a slack message","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Daily","Comments / Recommendations":"","Alliedflow":0.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Compliance & Records","Title":"Treatment Notes Monitoring","Description":"Ensuring that treatment notes for assisted appointments is completed.","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Daily","Comments / Recommendations":"","Alliedflow":0.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Compliance & Records","Title":"Missing Encounter Items in Alliedflow","Description":"Add any missing encounter items from yesterday\u2019s appointments to ensure records are complete and accurate.","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Daily","Comments / Recommendations":"","Alliedflow":1.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Compliance & Records","Title":"Draft Treatment Notes Monitoring","Description":"Weekly monitoring of treatment notes status of each practitioner.","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Weekly","Comments / Recommendations":"","Alliedflow":0.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Data & Reporting","Title":"Appointment Trackers for Assistants","Description":"Daily Reporting: Consolidation of data for each assistant podiatrist (number of each services done, rebooking rates, & referrals)","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Daily","Comments / Recommendations":"","Alliedflow":1.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Data & Reporting","Title":"Monthly Reporting","Description":"Monthly KPIs: Clinic & Practitioner Performance, Revenue Trends, Referrals and NPS ","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Monthly","Comments / Recommendations":"","Alliedflow":0.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Data & Reporting","Title":"Shift The Mix: Weekly Services Reporting","Description":"Weekly KPIs: Clinic & Practitioner Service Performance with Assisted and Class Revenue Trends","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Weekly","Comments / Recommendations":"","Alliedflow":1.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Data & Reporting","Title":"New Patient's Tracker","Description":"Tracking New Patient's for the week and send report to each practitioner's channel","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Weekly","Comments / Recommendations":"","Alliedflow":0.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Payer & Claims Optimisation","Title":"DVA Cases Checking","Description":"Checking of DVA cases if nearing expiration","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Weekly","Comments / Recommendations":"","Alliedflow":0.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"People Admin","Title":"Onboarding","Description":"Design and post team featured for new and existing employees, providing a brief introduction and send in the general channel.","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Monthly","Comments / Recommendations":"","Alliedflow":0.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"People Admin","Title":"Managing spin the wheel","Description":"- sending reminders\n- collecting votes\n- creating certificate for winner (Chris Grenyer)","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Every 2 months","Comments / Recommendations":"","Alliedflow":0.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Document Layout & Templates","Title":"Team Featured, Team Birthdays and Anniversaries","Description":"Creating image and caption","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Monthly","Comments / Recommendations":"","Alliedflow":0.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Process and File Management","Title":"Process Documentation & File Organization","Description":"Creating and maintaining clear process documents and organize files in Google Drive for easy access and reference","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Quarterly","Comments / Recommendations":"","Alliedflow":0.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Procurement & Inventory Admin","Title":"Approvals Email and Orders","Description":"Monitor approvals & orders inbox (VAs) \u2192 heads\u2011up for upcoming orders / patients needing appointments\n\n***Alliedflow under development***","Responsible":"VAs\nAdmins\nPractitioners","Owner":"Baby, Creme, & Camille\nAll Admins\nAll Practitioners","Frequency":"Daily","Comments / Recommendations":"","Alliedflow":1.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Research and Automation tasks","Title":"Peptalkr Monitoring","Description":"Check regularly the automations and update as needed to keep messaging accurate and consistent","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Daily","Comments / Recommendations":"","Alliedflow":0.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Referrals & Clinical Docs Admin","Title":"Support Inbox Monitoring","Description":"Monitoring of support email and getting requests","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Daily","Comments / Recommendations":"","Alliedflow":0.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Referrals & Clinical Docs Admin","Title":"Sending GP Letters via Remote Desktop","Description":"Prepare, process, and send medical reports using Remote Desktop to ensure secure and timely delivery.","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Daily","Comments / Recommendations":"","Alliedflow":0.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Rosters & Internal Meetings","Title":"Team Meetings","Description":"Schedule HPS, team meetings, and other recurring meetings","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Monthly","Comments / Recommendations":"","Alliedflow":0.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Scheduling Ops & Templates","Title":"Huddle Scheduling","Description":"Scheduling huddle leaders","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Monthly","Comments / Recommendations":"","Alliedflow":0.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Scheduling Ops & Templates","Title":"Huddle Sender","Description":"Updating huddle leaders ","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Monthly","Comments / Recommendations":"","Alliedflow":0.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Scheduling Ops & Templates","Title":"Unavailable Blocks for Assistants","Description":"Create unavailable time blocks in Cliniko for assisted practitioners 1 day prior","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Daily","Comments / Recommendations":"","Alliedflow":1.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Scheduling Ops & Templates","Title":"Orthotic Task Review","Description":"Ensure all orthotics appointments have corresponding orthotic tasks created in AlliedFlow for accurate monitoring by the orthotic technician.","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Weekly","Comments / Recommendations":"","Alliedflow":1.0,"scope":"in","source":"Core Operations"},{"Parent Category":"BLUE","Secondary Area":"Front Desk & Phones","Title":"Callbacks for New Referrals","Description":"VAs: Send new patient referrals via SMS\n\nAdmin: Call patients if no response/upcoming appoinment after 3 days of SMS","Responsible":"VAs\nAdmins","Owner":"Baby, Creme, & Camille\nAll Admins","Frequency":"Daily","Comments / Recommendations":"","Alliedflow":1.0,"scope":"in","source":"Core Operations"},{"Parent Category":"BLUE","Secondary Area":"Recall & Reminder Management","Title":"Recalls Sending (SMS) & Reminders","Description":"Ensure all scheduled patient recalls and appointment reminders are sent on the correct day, track follow-ups, and oversee any additional patient SMS communication in Peptalkr","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Weekly","Comments / Recommendations":"","Alliedflow":0.0,"scope":"in","source":"Core Operations"},{"Parent Category":"RED","Secondary Area":"Compliance & Records","Title":"Cliniko Tasks","Description":"- Add contacts in Cliniko \n- Archiving patients [passed away]\n- Uploading photos in Patient Files ","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Adhoc","Comments / Recommendations":"","Alliedflow":false,"scope":"in","source":"ADHOC Tasks"},{"Parent Category":"RED","Secondary Area":"Data & Reporting","Title":"Process documentation ","Description":"Documenting and updates SOPs and workflows to ensure consistency.","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Adhoc","Comments / Recommendations":"","Alliedflow":false,"scope":"in","source":"ADHOC Tasks"},{"Parent Category":"RED","Secondary Area":"Payer & Claims Optimisation","Title":"NDIS","Description":"Assist the admin team in creating service agreements, entering patient details for NDIS, and adding invoicing information","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Adhoc","Comments / Recommendations":"Newly Added Adhoc task","Alliedflow":false,"scope":"in","source":"ADHOC Tasks"},{"Parent Category":"RED","Secondary Area":"People Admin","Title":"Specify onboarding and offboarding notes","Description":"Maintains checklists and notes for team member onboarding and offboarding.","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Adhoc","Comments / Recommendations":"","Alliedflow":false,"scope":"in","source":"ADHOC Tasks"},{"Parent Category":"RED","Secondary Area":"Support & Operational Assistance","Title":"Adhoc Tasks","Description":"Manage ad-hoc requests from admins and practitioners, including Cliniko support, troubleshooting, template updates, and other on-demand tasks such as system research","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Adhoc","Comments / Recommendations":"","Alliedflow":false,"scope":"in","source":"ADHOC Tasks"},{"Parent Category":"BLUE","Secondary Area":"Patient Onboarding & Consent","Title":"Patient Onboarding & Consent","Description":"Checking of new patient form after online submission","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Adhoc","Comments / Recommendations":"","Alliedflow":false,"scope":"in","source":"ADHOC Tasks"},{"Parent Category":"RED","Secondary Area":"Document Layout & Templates","Title":"Document Layout & Template","Description":"- Creating forms like referral, incident. and etc.\n- Creating poster or sign [sample: Have a seat] \n- Document presentation [slideshow] ","Responsible":"EA & VAs","Owner":"Oshi, Baby, Creme, & Camille","Frequency":"Adhoc","Comments / Recommendations":"","Alliedflow":false,"scope":"in","source":"ADHOC Tasks"},{"Parent Category":"BLUE","Secondary Area":"Research and Automation tasks","Title":"Research and Automation tasks","Description":"Automation of tasks using Apps Script, Make.com, UiPath, and Zapier; maintenance, troubleshooting, and research for system improvements","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Adhoc","Comments / Recommendations":"","Alliedflow":false,"scope":"in","source":"ADHOC Tasks"},{"Parent Category":"BLACK","Secondary Area":"Marketing","Title":"News Letters","Description":"Creating and sending of news letters","Responsible":"VAs","Owner":"Baby, Creme, & Camille","Frequency":"Adhoc","Comments / Recommendations":"","Alliedflow":false,"scope":"out","source":"ADHOC Tasks"},{"Parent Category":"BLACK","Secondary Area":"Marketing","Title":"Social Media Management","Description":"- Managing of posts, ads, and replying to comments\n- Video-editing for Social Media posts (Facebook & Instagram) ","Responsible":"EA & VAs","Owner":"Oshi, Baby, Creme, & Camille","Frequency":"Adhoc","Comments / Recommendations":"","Alliedflow":false,"scope":"out","source":"ADHOC Tasks"}],"summary":{"total":37,"in_scope":35,"out_of_scope":2}};
+
+        // Emoji mapping for tasks
+        const emojiMap = {
+            'Cashbook': '💰',
+            'Scans Files Management': '📄',
+            'Checking of Communication in Cliniko': '💬',
+            'Checking of New Patients': '👥',
+            'Treatment Notes Monitoring': '📝',
+            'Missing Encounter Items in Alliedflow': '⚕️',
+            'Draft Treatment Notes Monitoring': '📋',
+            'Appointment Trackers for Assistants': '📊',
+            'Monthly Reporting': '📈',
+            'Shift The Mix: Weekly Services Reporting': '📉',
+            'New Patient\'s Tracker': '🆕',
+            'DVA Cases Checking': '🔍',
+            'Onboarding': '🎯',
+            'Managing spin the wheel': '🎡',
+            'Team Featured, Team Birthdays and Anniversaries': '🎉',
+            'Process Documentation & File Organization': '📁',
+            'Approvals Email and Orders': '✅',
+            'Peptalkr Monitoring': '🔔',
+            'Support Inbox Monitoring': '📧',
+            'Sending GP Letters via Remote Desktop': '📬',
+            'Team Meetings': '🤝',
+            'Huddle Scheduling': '📅',
+            'Huddle Sender': '📤',
+            'Unavailable Blocks for Assistants': '🚫',
+            'Orthotic Task Review': '👟',
+            'Callbacks for New Referrals': '📞',
+            'Recalls Sending (SMS) & Reminders': '📱',
+            'Cliniko Tasks': '🔧',
+            'Process documentation': '📖',
+            'NDIS': '🏥',
+            'Specify onboarding and offboarding notes': '📝',
+            'Adhoc Tasks': '⚡',
+            'Patient Onboarding & Consent': '📋',
+            'Document Layout & Template': '🎨',
+            'News Letters': '📰',
+            'Social Media Management': '📱'
+        };
+
+        // Marketplace services
+        const marketplaceServices = [
+            {
+                title: "Graphic Design",
+                description: "Professional design for marketing materials, social media graphics, infographics, and visual branding assets.",
+                icon: "🎨"
+            },
+            {
+                title: "Simple Website Updates",
+                description: "Content updates, page modifications, and basic maintenance for your website to keep it fresh and current.",
+                icon: "🌐"
+            },
+            {
+                title: "Presentations",
+                description: "Compelling slide decks for meetings, pitches, training sessions, and conferences with professional design.",
+                icon: "📊"
+            },
+            {
+                title: "Video Editing",
+                description: "Edit and polish video content for social media, training materials, promotional content, and testimonials.",
+                icon: "🎬"
+            },
+            {
+                title: "Content Writing",
+                description: "Blog posts, newsletters, social media captions, and other written content tailored to your brand voice.",
+                icon: "✍️"
+            },
+            {
+                title: "Data Analysis & Visualization",
+                description: "Transform your data into actionable insights with charts, dashboards, and comprehensive reports.",
+                icon: "📈"
+            }
+        ];
+
+        // Filter and separate tasks
+        const { tasks } = tasksData;
+        const filteredTasks = tasks.filter(t =>
+            t['Secondary Area'] !== 'Research and Automation tasks' &&
+            t.Title !== 'Research and Automation tasks'
+        );
+
+        const coreServices = filteredTasks.filter(t => t.scope === 'in' && t.source === 'Core Operations');
+        const adhocTasks = filteredTasks.filter(t => t.scope === 'in' && t.source === 'ADHOC Tasks');
+
+        // Function to create task card HTML
+        function createTaskCard(task, section) {
+            const emoji = emojiMap[task.Title] || '📌';
+            const hasComment = task['Comments / Recommendations'] && task['Comments / Recommendations'].trim() !== '';
+
+            return `
+                <div
+                    class="task-card bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-6"
+                    style="border: 1px solid var(--color_cmyyG_default);"
+                    data-title="${task.Title}"
+                    data-description="${task.Description}"
+                    data-secondary="${task['Secondary Area']}"
+                    data-frequency="${task.Frequency}"
+                    data-section="${section}"
+                >
+                    <div class="flex items-start gap-3 mb-4">
+                        <span class="text-2xl">${emoji}</span>
+                        <h3 class="text-lg font-semibold leading-tight flex-1" style="color: var(--color_text_default); font-family: var(--font_default);">${task.Title}</h3>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        ${task.Frequency ? `
+                            <span class="px-3 py-1 rounded-lg text-xs font-medium" style="background-color: var(--color_primary_default); color: white; font-family: var(--font_default);">
+                                ${task.Frequency}
+                            </span>
+                        ` : ''}
+                        ${task['Secondary Area'] ? `
+                            <span class="px-3 py-1 rounded-lg text-xs font-medium" style="background-color: var(--color_cmyyG_default); color: var(--color_cmulY_default); font-family: var(--font_default);">
+                                ${task['Secondary Area']}
+                            </span>
+                        ` : ''}
+                    </div>
+
+                    <p class="text-sm leading-relaxed mb-4" style="color: var(--color_cmulY_default); font-family: var(--font_default);">${task.Description}</p>
+
+                    <div class="flex flex-wrap gap-2">
+                        ${task.Responsible ? `
+                            <span class="px-3 py-1 rounded-lg text-xs font-medium" style="background-color: rgba(var(--color_cmjzM_default_rgb), 0.1); color: var(--color_cmjzM_default); font-family: var(--font_default);">
+                                ${task.Responsible}
+                            </span>
+                        ` : ''}
+                        ${task.Owner ? `
+                            <span class="px-3 py-1 rounded-lg text-xs font-medium" style="background-color: rgba(var(--color_cnNrQ_default_rgb), 0.1); color: var(--color_cnNrQ_default); font-family: var(--font_default);">
+                                ${task.Owner}
+                            </span>
+                        ` : ''}
+                        ${task.Alliedflow && task.Alliedflow !== 0 ? `
+                            <span class="px-3 py-1 rounded-lg text-xs font-medium" style="background-color: rgba(var(--color_success_default_rgb), 0.1); color: var(--color_success_default); font-family: var(--font_default);">
+                                Alliedflow
+                            </span>
+                        ` : ''}
+                    </div>
+
+                    ${hasComment ? `
+                        <div class="mt-4 p-3 rounded-lg" style="background-color: rgba(var(--color_alert_default_rgb), 0.1); border-left: 3px solid var(--color_alert_default);">
+                            <p class="text-xs font-semibold mb-1" style="color: var(--color_alert_default); font-family: var(--font_default);">Note</p>
+                            <p class="text-xs" style="color: var(--color_cmulY_default); font-family: var(--font_default);">${task['Comments / Recommendations']}</p>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        // Function to create marketplace card HTML
+        function createMarketplaceCard(service) {
+            return `
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-6" style="border: 1px solid var(--color_cmyyG_default);">
+                    <div class="flex items-start gap-3 mb-3">
+                        <span class="text-2xl">${service.icon}</span>
+                        <h3 class="text-lg font-semibold leading-tight flex-1" style="color: var(--color_text_default); font-family: var(--font_default);">${service.title}</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed" style="color: var(--color_cmulY_default); font-family: var(--font_default);">${service.description}</p>
+                </div>
+            `;
+        }
+
+        // Render initial content
+        function renderContent() {
+            const coreContainer = document.getElementById('core-services-container');
+            const adhocContainer = document.getElementById('adhoc-container');
+            const marketplaceContainer = document.getElementById('marketplace-container');
+
+            coreContainer.innerHTML = coreServices.map(task => createTaskCard(task, 'core')).join('');
+            adhocContainer.innerHTML = adhocTasks.map(task => createTaskCard(task, 'adhoc')).join('');
+            marketplaceContainer.innerHTML = marketplaceServices.map(service => createMarketplaceCard(service)).join('');
+        }
+
+        // Search and filter functionality
+        const searchInput = document.getElementById('search');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        let currentFrequency = 'all';
+
+        function filterTasks() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const allCards = document.querySelectorAll('.task-card');
+
+            let visibleCore = 0;
+            let visibleAdhoc = 0;
+
+            allCards.forEach(card => {
+                const title = card.dataset.title.toLowerCase();
+                const description = card.dataset.description.toLowerCase();
+                const secondary = card.dataset.secondary.toLowerCase();
+                const frequency = card.dataset.frequency;
+                const section = card.dataset.section;
+
+                const matchesSearch = title.includes(searchTerm) ||
+                                    description.includes(searchTerm) ||
+                                    secondary.includes(searchTerm);
+
+                const matchesFrequency = currentFrequency === 'all' || frequency === currentFrequency;
+
+                if (matchesSearch && matchesFrequency) {
+                    card.classList.remove('hidden');
+                    if (section === 'core') visibleCore++;
+                    else if (section === 'adhoc') visibleAdhoc++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Show/hide empty states
+            document.getElementById('core-services-empty').classList.toggle('hidden', visibleCore > 0);
+            document.getElementById('adhoc-empty').classList.toggle('hidden', visibleAdhoc > 0);
+
+            // Hide/show section headers based on filter
+            const adhocHeader = document.getElementById('adhoc-header');
+            const coreHeader = document.getElementById('core-header');
+
+            if (currentFrequency !== 'all' || searchTerm !== '') {
+                adhocHeader.classList.toggle('hidden', visibleAdhoc === 0);
+                coreHeader.classList.toggle('hidden', visibleCore === 0);
+            } else {
+                adhocHeader.classList.remove('hidden');
+                coreHeader.classList.remove('hidden');
+            }
+        }
+
+        searchInput.addEventListener('input', filterTasks);
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active state
+                filterBtns.forEach(b => {
+                    b.style.backgroundColor = 'white';
+                    b.style.border = '1px solid var(--color_cmyyG_default)';
+                    b.style.color = 'var(--color_text_default)';
+                });
+                this.style.backgroundColor = 'var(--color_primary_default)';
+                this.style.border = 'none';
+                this.style.color = 'white';
+
+                // Update filter
+                currentFrequency = this.dataset.frequency;
+                filterTasks();
+            });
+        });
+
+        // Modal functionality
+        const modal = document.getElementById('support-modal');
+        const requestBtn = document.getElementById('request-support-btn');
+        const closeModalBtn = document.getElementById('close-modal');
+        const closeModalBtnBottom = document.getElementById('close-modal-btn');
+
+        requestBtn.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        closeModalBtnBottom.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', renderContent);
+        renderContent();
+    </script>
+</body>
+</html>
