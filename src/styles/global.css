@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&family=Nunito:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --font_default: "Figtree", sans-serif;
+    --font_cmula_default: "Nunito", sans-serif;
+    --color_text_default: rgba(14, 30, 47, 1);
+    --color_text_default_rgb: 14, 30, 47;
+    --color_alert_default: rgba(252, 172, 18, 1);
+    --color_alert_default_rgb: 252, 172, 18;
+    --color_primary_default: rgba(105, 156, 172, 1);
+    --color_primary_default_rgb: 105, 156, 172;
+    --color_success_default: rgba(64, 147, 72, 1);
+    --color_success_default_rgb: 64, 147, 72;
+    --color_surface_default: rgba(255, 255, 255, 1);
+    --color_surface_default_rgb: 255, 255, 255;
+    --color_background_default: rgba(235, 238, 241, 1);
+    --color_background_default_rgb: 235, 238, 241;
+    --color_destructive_default: rgba(248, 62, 62, 1);
+    --color_destructive_default_rgb: 248, 62, 62;
+    --color_primary_contrast_default: rgba(255, 255, 255, 1);
+    --color_primary_contrast_default_rgb: 255, 255, 255;
+    --color_cmcmt_default: rgba(2, 132, 254, 1);
+    --color_cmcmt_default_rgb: 2, 132, 254;
+    --color_cmcmu_default: rgba(0, 0, 0, 1);
+    --color_cmcmu_default_rgb: 0, 0, 0;
+    --color_cmcmv_default: rgba(2, 132, 254, 1);
+    --color_cmcmv_default_rgb: 2, 132, 254;
+    --color_cmjzM_default: rgba(74, 67, 96, 1);
+    --color_cmjzM_default_rgb: 74, 67, 96;
+    --color_cmulY_default: rgba(115, 109, 133, 1);
+    --color_cmulY_default_rgb: 115, 109, 133;
+    --color_cmulZ_default: rgba(74, 67, 96, 1);
+    --color_cmulZ_default_rgb: 74, 67, 96;
+    --color_cmulk_default: rgba(63, 117, 133, 1);
+    --color_cmulk_default_rgb: 63, 117, 133;
+    --color_cmyyG_default: rgba(235, 238, 241, 1);
+    --color_cmyyG_default_rgb: 235, 238, 241;
+    --color_cnJxq_default: rgba(115, 109, 133, 1);
+    --color_cnJxq_default_rgb: 115, 109, 133;
+    --color_cnNrQ_default: rgba(210, 142, 130, 1);
+    --color_cnNrQ_default_rgb: 210, 142, 130;
+    --color_cnZGe_default: rgba(124, 119, 141, 1);
+    --color_cnZGe_default_rgb: 124, 119, 141;
+}
+
+body {
+    font-family: var(--font_default);
+    color: var(--color_text_default);
+}

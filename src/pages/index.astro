@@ -1,0 +1,432 @@
+---
+import '../styles/global.css';
+import tasksData from '../data/tasks.json';
+
+const { tasks } = tasksData;
+
+// Filter out Research and Automation tasks
+const filteredTasks = tasks.filter(t =>
+	t['Secondary Area'] !== 'Research and Automation tasks' &&
+	t.Title !== 'Research and Automation tasks'
+);
+
+// Separate into categories
+const coreServices = filteredTasks.filter(t => t.scope === 'in' && t.source === 'Core Operations');
+const adhocTasks = filteredTasks.filter(t => t.scope === 'in' && t.source === 'ADHOC Tasks');
+
+// Emoji mapping for tasks
+const emojiMap = {
+	'Cashbook': '💰',
+	'Scans Files Management': '📄',
+	'Checking of Communication in Cliniko': '💬',
+	'Checking of New Patients': '👥',
+	'Treatment Notes Monitoring': '📝',
+	'Missing Encounter Items in Alliedflow': '⚕️',
+	'Draft Treatment Notes Monitoring': '📋',
+	'Appointment Trackers for Assistants': '📊',
+	'Monthly Reporting': '📈',
+	'Shift The Mix: Weekly Services Reporting': '📉',
+	'New Patient\'s Tracker': '🆕',
+	'DVA Cases Checking': '🔍',
+	'Onboarding': '🎯',
+	'Managing spin the wheel': '🎡',
+	'Team Featured, Team Birthdays and Anniversaries': '🎉',
+	'Process Documentation & File Organization': '📁',
+	'Approvals Email and Orders': '✅',
+	'Peptalkr Monitoring': '🔔',
+	'Support Inbox Monitoring': '📧',
+	'Sending GP Letters via Remote Desktop': '📬',
+	'Team Meetings': '🤝',
+	'Huddle Scheduling': '📅',
+	'Huddle Sender': '📤',
+	'Unavailable Blocks for Assistants': '🚫',
+	'Orthotic Task Review': '👟',
+	'Callbacks for New Referrals': '📞',
+	'Recalls Sending (SMS) & Reminders': '📱',
+	'Cliniko Tasks': '🔧',
+	'Process documentation': '📖',
+	'NDIS': '🏥',
+	'Specify onboarding and offboarding notes': '📝',
+	'Adhoc Tasks': '⚡',
+	'Patient Onboarding & Consent': '📋',
+	'Document Layout & Template': '🎨',
+	'News Letters': '📰',
+	'Social Media Management': '📱'
+};
+
+// Marketplace services for "How Else We Can Help"
+const marketplaceServices = [
+	{
+		title: "Graphic Design",
+		description: "Professional design for marketing materials, social media graphics, infographics, and visual branding assets.",
+		icon: "🎨"
+	},
+	{
+		title: "Simple Website Updates",
+		description: "Content updates, page modifications, and basic maintenance for your website to keep it fresh and current.",
+		icon: "🌐"
+	},
+	{
+		title: "Presentations",
+		description: "Compelling slide decks for meetings, pitches, training sessions, and conferences with professional design.",
+		icon: "📊"
+	},
+	{
+		title: "Video Editing",
+		description: "Edit and polish video content for social media, training materials, promotional content, and testimonials.",
+		icon: "🎬"
+	},
+	{
+		title: "Content Writing",
+		description: "Blog posts, newsletters, social media captions, and other written content tailored to your brand voice.",
+		icon: "✍️"
+	},
+	{
+		title: "Data Analysis & Visualization",
+		description: "Transform your data into actionable insights with charts, dashboards, and comprehensive reports.",
+		icon: "📈"
+	}
+];
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>VA Services Scope Guide</title>
+	</head>
+	<body style="background-color: var(--color_background_default); margin: 0; padding: 0;">
+		<main class="max-w-7xl mx-auto px-6 py-8">
+			<!-- Simple Header -->
+			<div class="mb-8">
+				<h1 class="text-3xl font-bold mb-2" style="color: var(--color_text_default); font-family: var(--font_default);">Virtual Assistant Services</h1>
+				<p class="text-base mb-4" style="color: var(--color_cmulY_default); font-family: var(--font_default);">Scope of Service Guide for Practitioners & Administration</p>
+			</div>
+
+			<!-- Simple Search Section -->
+			<div class="mb-8">
+				<div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+					<div class="relative mb-4">
+						<input
+							type="text"
+							id="search"
+							placeholder="Search services..."
+							style="border-color: var(--color_cmyyG_default); font-family: var(--font_default); color: var(--color_text_default);"
+							class="w-full px-4 py-3 pl-11 border rounded-lg focus:outline-none focus:border-[var(--color_primary_default)] transition text-base"
+						/>
+						<svg class="w-5 h-5 absolute left-3.5 top-1/2 transform -translate-y-1/2" style="color: var(--color_cmulY_default);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+						</svg>
+					</div>
+
+					<div class="flex gap-2 flex-wrap">
+						<button style="background-color: var(--color_primary_default); font-family: var(--font_default);" class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition text-white" data-frequency="all">
+							All
+						</button>
+						<button style="background-color: white; border: 1px solid var(--color_cmyyG_default); color: var(--color_text_default); font-family: var(--font_default);" class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition hover:border-[var(--color_primary_default)]" data-frequency="Daily">
+							Daily
+						</button>
+						<button style="background-color: white; border: 1px solid var(--color_cmyyG_default); color: var(--color_text_default); font-family: var(--font_default);" class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition hover:border-[var(--color_primary_default)]" data-frequency="Weekly">
+							Weekly
+						</button>
+						<button style="background-color: white; border: 1px solid var(--color_cmyyG_default); color: var(--color_text_default); font-family: var(--font_default);" class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition hover:border-[var(--color_primary_default)]" data-frequency="Monthly">
+							Monthly
+						</button>
+						<button style="background-color: white; border: 1px solid var(--color_cmyyG_default); color: var(--color_text_default); font-family: var(--font_default);" class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition hover:border-[var(--color_primary_default)]" data-frequency="Quarterly">
+							Quarterly
+						</button>
+						<button style="background-color: white; border: 1px solid var(--color_cmyyG_default); color: var(--color_text_default); font-family: var(--font_default);" class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition hover:border-[var(--color_primary_default)]" data-frequency="Adhoc">
+							Ad-hoc
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Core Services -->
+			<section class="mb-10">
+				<div class="mb-6" id="core-header">
+					<h2 class="text-2xl font-bold mb-1" style="color: var(--color_text_default); font-family: var(--font_default);">Core Services</h2>
+					<p class="text-sm" style="color: var(--color_cmulY_default); font-family: var(--font_default);">Our primary service delivery</p>
+				</div>
+
+				<div id="core-services-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+					{coreServices.map((task, index) => (
+						<div
+							class="task-card bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-6"
+							style="border: 1px solid var(--color_cmyyG_default);"
+							data-title={task.Title}
+							data-description={task.Description}
+							data-secondary={task['Secondary Area']}
+							data-frequency={task.Frequency}
+							data-section="core"
+						>
+							<div class="flex items-start gap-3 mb-4">
+								<span class="text-2xl">{emojiMap[task.Title] || '📌'}</span>
+								<h3 class="text-lg font-semibold leading-tight flex-1" style="color: var(--color_text_default); font-family: var(--font_default);">{task.Title}</h3>
+							</div>
+
+							<div class="flex flex-wrap gap-2 mb-4">
+								{task.Frequency && (
+									<span class="px-3 py-1 rounded-lg text-xs font-medium" style="background-color: var(--color_primary_default); color: white; font-family: var(--font_default);">
+										{task.Frequency}
+									</span>
+								)}
+								{task['Secondary Area'] && (
+									<span class="px-3 py-1 rounded-lg text-xs font-medium" style="background-color: var(--color_cmyyG_default); color: var(--color_cmulY_default); font-family: var(--font_default);">
+										{task['Secondary Area']}
+									</span>
+								)}
+							</div>
+
+							<p class="text-sm leading-relaxed mb-4" style="color: var(--color_cmulY_default); font-family: var(--font_default);">{task.Description}</p>
+
+							<div class="flex flex-wrap gap-2">
+								{task.Responsible && (
+									<span class="px-3 py-1 rounded-lg text-xs font-medium" style="background-color: rgba(var(--color_cmjzM_default_rgb), 0.1); color: var(--color_cmjzM_default); font-family: var(--font_default);">
+										{task.Responsible}
+									</span>
+								)}
+								{task.Owner && (
+									<span class="px-3 py-1 rounded-lg text-xs font-medium" style="background-color: rgba(var(--color_cnNrQ_default_rgb), 0.1); color: var(--color_cnNrQ_default); font-family: var(--font_default);">
+										{task.Owner}
+									</span>
+								)}
+								{task.Alliedflow && task.Alliedflow !== 0 && (
+									<span class="px-3 py-1 rounded-lg text-xs font-medium" style="background-color: rgba(var(--color_success_default_rgb), 0.1); color: var(--color_success_default); font-family: var(--font_default);">
+										Alliedflow
+									</span>
+								)}
+							</div>
+
+							{task['Comments / Recommendations'] && (
+								<div class="mt-4 p-3 rounded-lg" style="background-color: rgba(var(--color_alert_default_rgb), 0.1); border-left: 3px solid var(--color_alert_default);">
+									<p class="text-xs font-semibold mb-1" style="color: var(--color_alert_default); font-family: var(--font_default);">Note</p>
+									<p class="text-xs" style="color: var(--color_cmulY_default); font-family: var(--font_default);">{task['Comments / Recommendations']}</p>
+								</div>
+							)}
+						</div>
+					))}
+				</div>
+				<div id="core-services-empty" class="hidden text-center py-12 text-sm" style="color: var(--color_cmulY_default);">
+					No core services match your search criteria.
+				</div>
+			</section>
+
+			<!-- ADHOC Tasks -->
+			<section class="mb-10">
+				<div class="mb-6" id="adhoc-header">
+					<h2 class="text-2xl font-bold mb-1" style="color: var(--color_text_default); font-family: var(--font_default);">Ad-hoc Support</h2>
+					<p class="text-sm" style="color: var(--color_cmulY_default); font-family: var(--font_default);">Tasks that can be supported once core tasks are completed</p>
+				</div>
+
+				<div id="adhoc-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+					{adhocTasks.map((task, index) => (
+						<div
+							class="task-card bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-6"
+							style="border: 1px solid var(--color_cmyyG_default);"
+							data-title={task.Title}
+							data-description={task.Description}
+							data-secondary={task['Secondary Area']}
+							data-frequency={task.Frequency}
+							data-section="adhoc"
+						>
+							<div class="flex items-start gap-3 mb-4">
+								<span class="text-2xl">{emojiMap[task.Title] || '📌'}</span>
+								<h3 class="text-lg font-semibold leading-tight flex-1" style="color: var(--color_text_default); font-family: var(--font_default);">{task.Title}</h3>
+							</div>
+
+							<div class="flex flex-wrap gap-2 mb-4">
+								{task.Frequency && (
+									<span class="px-3 py-1 rounded-lg text-xs font-medium" style="background-color: var(--color_primary_default); color: white; font-family: var(--font_default);">
+										{task.Frequency}
+									</span>
+								)}
+								{task['Secondary Area'] && (
+									<span class="px-3 py-1 rounded-lg text-xs font-medium" style="background-color: var(--color_cmyyG_default); color: var(--color_cmulY_default); font-family: var(--font_default);">
+										{task['Secondary Area']}
+									</span>
+								)}
+							</div>
+
+							<p class="text-sm leading-relaxed mb-4" style="color: var(--color_cmulY_default); font-family: var(--font_default);">{task.Description}</p>
+
+							<div class="flex flex-wrap gap-2">
+								{task.Responsible && (
+									<span class="px-3 py-1 rounded-lg text-xs font-medium" style="background-color: rgba(var(--color_cmjzM_default_rgb), 0.1); color: var(--color_cmjzM_default); font-family: var(--font_default);">
+										{task.Responsible}
+									</span>
+								)}
+								{task.Owner && (
+									<span class="px-3 py-1 rounded-lg text-xs font-medium" style="background-color: rgba(var(--color_cnNrQ_default_rgb), 0.1); color: var(--color_cnNrQ_default); font-family: var(--font_default);">
+										{task.Owner}
+									</span>
+								)}
+							</div>
+
+							{task['Comments / Recommendations'] && (
+								<div class="mt-4 p-3 rounded-lg" style="background-color: rgba(var(--color_alert_default_rgb), 0.1); border-left: 3px solid var(--color_alert_default);">
+									<p class="text-xs font-semibold mb-1" style="color: var(--color_alert_default); font-family: var(--font_default);">Note</p>
+									<p class="text-xs" style="color: var(--color_cmulY_default); font-family: var(--font_default);">{task['Comments / Recommendations']}</p>
+								</div>
+							)}
+						</div>
+					))}
+				</div>
+				<div id="adhoc-empty" class="hidden text-center py-12 text-sm" style="color: var(--color_cmulY_default);">
+					No ad-hoc tasks match your search criteria.
+				</div>
+			</section>
+
+			<!-- How Else We Can Help (Marketplace) -->
+			<section class="mb-10">
+				<div class="mb-6">
+					<div class="flex items-start justify-between gap-4">
+						<div>
+							<h2 class="text-2xl font-bold mb-1" style="color: var(--color_text_default); font-family: var(--font_default);">How Else We Can Help</h2>
+							<p class="text-sm" style="color: var(--color_cmulY_default); font-family: var(--font_default);">Yoonet maintains a team of technical and creative talents ready to support your business needs.</p>
+						</div>
+						<button id="request-support-btn" style="background-color: var(--color_primary_default); font-family: var(--font_default);" class="text-white hover:opacity-90 px-5 py-2.5 rounded-lg font-medium transition shadow-sm text-sm whitespace-nowrap">
+							Request Support
+						</button>
+					</div>
+				</div>
+
+				<!-- Marketplace Services Grid -->
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+					{marketplaceServices.map((service) => (
+						<div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-6" style="border: 1px solid var(--color_cmyyG_default);">
+							<div class="flex items-start gap-3 mb-3">
+								<span class="text-2xl">{service.icon}</span>
+								<h3 class="text-lg font-semibold leading-tight flex-1" style="color: var(--color_text_default); font-family: var(--font_default);">{service.title}</h3>
+							</div>
+							<p class="text-sm leading-relaxed" style="color: var(--color_cmulY_default); font-family: var(--font_default);">{service.description}</p>
+						</div>
+					))}
+				</div>
+			</section>
+		</main>
+
+		<!-- Modal for Request Support -->
+		<div id="support-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+			<div class="bg-white rounded-xl shadow-xl max-w-md w-full p-8 relative">
+				<button id="close-modal" class="absolute top-4 right-4 hover:opacity-70" style="color: var(--color_cmulY_default);">
+					<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+					</svg>
+				</button>
+				<h3 class="text-2xl font-bold mb-3" style="color: var(--color_text_default); font-family: var(--font_default);">Request Support</h3>
+				<p class="mb-6 text-sm" style="color: var(--color_cmulY_default); font-family: var(--font_default);">
+					Please contact our Yoonet Marketplace team to discuss your project needs and get a customized quote.
+				</p>
+				<div class="space-y-3">
+					<a href="mailto:marketplace@yoonet.com.au" style="background-color: var(--color_primary_default); font-family: var(--font_default);" class="block w-full hover:opacity-90 text-white text-center px-6 py-3 rounded-lg font-medium transition">
+						Email Marketplace Team
+					</a>
+					<button id="close-modal-btn" style="background-color: var(--color_cmyyG_default); color: var(--color_text_default); font-family: var(--font_default);" class="block w-full hover:opacity-90 text-center px-6 py-3 rounded-lg font-medium transition">
+						Close
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			// Search functionality
+			const searchInput = document.getElementById('search');
+			const filterBtns = document.querySelectorAll('.filter-btn');
+			let currentFrequency = 'all';
+
+			function filterTasks() {
+				const searchTerm = searchInput.value.toLowerCase();
+				const allCards = document.querySelectorAll('.task-card');
+
+				let visibleCore = 0;
+				let visibleAdhoc = 0;
+
+				allCards.forEach(card => {
+					const title = card.dataset.title.toLowerCase();
+					const description = card.dataset.description.toLowerCase();
+					const secondary = card.dataset.secondary.toLowerCase();
+					const frequency = card.dataset.frequency;
+					const section = card.dataset.section;
+
+					const matchesSearch = title.includes(searchTerm) ||
+										description.includes(searchTerm) ||
+										secondary.includes(searchTerm);
+
+					const matchesFrequency = currentFrequency === 'all' || frequency === currentFrequency;
+
+					if (matchesSearch && matchesFrequency) {
+						card.classList.remove('hidden');
+						if (section === 'core') visibleCore++;
+						else if (section === 'adhoc') visibleAdhoc++;
+					} else {
+						card.classList.add('hidden');
+					}
+				});
+
+				// Show/hide empty states
+				document.getElementById('core-services-empty').classList.toggle('hidden', visibleCore > 0);
+				document.getElementById('adhoc-empty').classList.toggle('hidden', visibleAdhoc > 0);
+
+				// Hide/show section headers based on filter
+				const adhocHeader = document.getElementById('adhoc-header');
+				const coreHeader = document.getElementById('core-header');
+
+				if (currentFrequency !== 'all' || searchTerm !== '') {
+					adhocHeader.classList.toggle('hidden', visibleAdhoc === 0);
+					coreHeader.classList.toggle('hidden', visibleCore === 0);
+				} else {
+					adhocHeader.classList.remove('hidden');
+					coreHeader.classList.remove('hidden');
+				}
+			}
+
+			searchInput.addEventListener('input', filterTasks);
+
+			filterBtns.forEach(btn => {
+				btn.addEventListener('click', function() {
+					// Update active state
+					filterBtns.forEach(b => {
+						b.style.backgroundColor = 'white';
+						b.style.border = '1px solid var(--color_cmyyG_default)';
+						b.style.color = 'var(--color_text_default)';
+					});
+					this.style.backgroundColor = 'var(--color_primary_default)';
+					this.style.border = 'none';
+					this.style.color = 'white';
+
+					// Update filter
+					currentFrequency = this.dataset.frequency;
+					filterTasks();
+				});
+			});
+
+			// Modal functionality
+			const modal = document.getElementById('support-modal');
+			const requestBtn = document.getElementById('request-support-btn');
+			const closeModalBtn = document.getElementById('close-modal');
+			const closeModalBtnBottom = document.getElementById('close-modal-btn');
+
+			requestBtn.addEventListener('click', () => {
+				modal.classList.remove('hidden');
+			});
+
+			closeModalBtn.addEventListener('click', () => {
+				modal.classList.add('hidden');
+			});
+
+			closeModalBtnBottom.addEventListener('click', () => {
+				modal.classList.add('hidden');
+			});
+
+			// Close modal when clicking outside
+			modal.addEventListener('click', (e) => {
+				if (e.target === modal) {
+					modal.classList.add('hidden');
+				}
+			});
+		</script>
+	</body>
+</html>
